@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "TubeFilter Pro",
+  "version": "1.0",
+  "description": "Customize YouTube filter chips and block videos by keyword.",
+  "permissions": [
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://www.youtube.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+    // I removed the "default_icon" section here
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+  // I removed the "icons" section at the bottom
+}
